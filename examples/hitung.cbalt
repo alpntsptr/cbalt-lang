@@ -1,0 +1,12 @@
+func tambah(a: i32, b: i32) -> i32 {
+    return a + b;
+}
+
+func main() -> i32 {
+    let x: i32 = 12;
+    let y: i32 = 8;
+    let hasil: i32 = tambah(x, y);
+
+    printc("Hasil perhitungan: ", hasil, "\n");
+    return 0;
+}

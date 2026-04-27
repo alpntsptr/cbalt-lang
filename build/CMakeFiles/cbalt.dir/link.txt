@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\cbalt.dir/objects.a
+C:\Users\Jale\scoop\apps\mingw\current\bin\ar.exe qc CMakeFiles\cbalt.dir/objects.a @CMakeFiles\cbalt.dir\objects1.rsp
+C:\Users\Jale\scoop\apps\mingw\current\bin\g++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\cbalt.dir/objects.a -Wl,--no-whole-archive -o D:\cbalt-lang\bin\cbalt.exe -Wl,--out-implib,libcbalt.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cbalt.dir\linkLibs.rsp

@@ -1,0 +1,93 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CBALT: Build",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-B", "build", 
+                "-DLLVM_DIR=${workspaceFolder}/llvm/lib/cmake/llvm",
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "detail": "CMake configure & generate"
+        },
+        {
+            "label": "CBALT: Compile",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "build", "--config", "Release", "-j8"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "CBALT: Build",
+            "problemMatcher": ["$gcc"],
+            "detail": "Compile CBALT compiler"
+        },
+        {
+            "label": "CBALT: Clean",
+            "type": "shell",
+            "command": "rm",
+            "args": ["-rf", "build", "*.bc", "*.o", "*.exe"],
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "Clean build artifacts"
+        },
+        {
+            "label": "CBALT: Compile Example",
+            "type": "shell",
+            "command": "./build/bin/cbalt",
+            "args": ["${file}"],
+            "group": "test",
+            "dependsOn": "CBALT: Compile",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [],
+            "detail": "Compile current .cbalt file"
+        },
+        {
+            "label": "CBALT: Run Native",
+            "type": "shell",
+            "command": "clang++",
+            "args": [
+                "a.out.bc", 
+                "-o", "a.out.exe", 
+                "-no-pie", 
+                "-O3"
+            ],
+            "group": "test",
+            "dependsOn": "CBALT: Compile Example",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "LLVM bitcode to native executable"
+        },
+        {
+            "label": "CBALT: Full Pipeline",
+            "type": "shell",
+            "command": "./build/bin/cbalt",
+            "args": ["${file}"],
+            "group": "test",
+            "dependsOn": "CBALT: Compile",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "problemMatcher": [],
+            "detail": "Compile CBALT -> LLVM -> Native -> Run"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+[
+{
+  "directory": "D:/cbalt-lang/build",
+  "command": "C:\\Users\\Jale\\scoop\\apps\\mingw\\current\\bin\\g++.exe  @CMakeFiles/cbalt.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\cbalt.dir\\src\\main.cpp.obj -c D:\\cbalt-lang\\src\\main.cpp",
+  "file": "D:/cbalt-lang/src/main.cpp",
+  "output": "CMakeFiles/cbalt.dir/src/main.cpp.obj"
+},
+{
+  "directory": "D:/cbalt-lang/build",
+  "command": "C:\\Users\\Jale\\scoop\\apps\\mingw\\current\\bin\\g++.exe  @CMakeFiles/cbalt.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\cbalt.dir\\src\\lexer.cpp.obj -c D:\\cbalt-lang\\src\\lexer.cpp",
+  "file": "D:/cbalt-lang/src/lexer.cpp",
+  "output": "CMakeFiles/cbalt.dir/src/lexer.cpp.obj"
+},
+{
+  "directory": "D:/cbalt-lang/build",
+  "command": "C:\\Users\\Jale\\scoop\\apps\\mingw\\current\\bin\\g++.exe  @CMakeFiles/cbalt.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\cbalt.dir\\src\\parser.cpp.obj -c D:\\cbalt-lang\\src\\parser.cpp",
+  "file": "D:/cbalt-lang/src/parser.cpp",
+  "output": "CMakeFiles/cbalt.dir/src/parser.cpp.obj"
+},
+{
+  "directory": "D:/cbalt-lang/build",
+  "command": "C:\\Users\\Jale\\scoop\\apps\\mingw\\current\\bin\\g++.exe  @CMakeFiles/cbalt.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\cbalt.dir\\src\\codegen.cpp.obj -c D:\\cbalt-lang\\src\\codegen.cpp",
+  "file": "D:/cbalt-lang/src/codegen.cpp",
+  "output": "CMakeFiles/cbalt.dir/src/codegen.cpp.obj"
+}
+]

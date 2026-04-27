@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "CBALT Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/cbalt",
+            "args": ["${file}"],
+            "stopOnEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "CBALT: Compile",
+            "miDebuggerPath": "gdb"
+        },
+        {
+            "name": "Native Executable",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/a.out.exe",
+            "stopOnEntry": false,
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "CBALT: Run Native"
+        }
+    ]
+}
